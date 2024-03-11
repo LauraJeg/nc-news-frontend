@@ -1,3 +1,5 @@
+import './styling/articleHomePage.css'
+
 function ArticleCard ({article}) {
     return (
         <div className = 'articleCard'>

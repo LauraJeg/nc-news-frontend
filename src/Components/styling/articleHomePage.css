@@ -1,0 +1,15 @@
+.articleCard{
+    align-items: center; /* Use another value to see the result */
+    width: 80%;
+    height: 345px;
+    margin:auto;
+    text-align: center;
+    background-color: rgb(164, 206, 149);
+}
+
+img{
+    width: 10em;
+    border: 10px black;
+    border-radius: 4px;
+    margin: 0% 17% ;
+}
