@@ -5,10 +5,11 @@ import { useState } from "react";
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-    const {userID, setUserID}= useState(1);
+    const [currentUser, setCurrentUser] = useState({username: 'Mashca'});
+    console.log(currentUser)
 
     return (
-            <UserContext.Provider value = {{userID, setUserID}}>
+            <UserContext.Provider value = {{currentUser, setCurrentUser}}>
                 {children}
             </UserContext.Provider>
             );
