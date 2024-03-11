@@ -1,5 +1,8 @@
-import { createContext } from "react";
+import {Link} from 'react-router-dom';
+import React from 'react'
 
-const UserContext = createContext()
+function Header () {
+    return <h1>Header</h1>
+}
 
-export default UserContext
+export default Header;
