@@ -1,12 +1,16 @@
-import { useState } from 'react'
 import './App.css'
+import Articles from './Components/Articles'
+import Header from './Components/Header'
+import React, { useState } from 'react'
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [currArticles, setCurrArticles] = useState([])
   return (
     <>
-    </>
+      <Header/>
+      <Articles currArticles = {currArticles} setCurrArticles = {setCurrArticles}/>
+      </>
   )
 }
 
