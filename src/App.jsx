@@ -10,7 +10,6 @@ function App() {
     <>
       <Header/>
       <Articles currArticles = {currArticles} setCurrArticles = {setCurrArticles}/>
-      <p> Hello</p>
       </>
   )
 }
