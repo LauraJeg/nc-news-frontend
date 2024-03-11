@@ -1,6 +1,11 @@
+.article {
+    display:flex;
+    flex-wrap: wrap;
+}
+
 .articleCard{
     align-items: center; /* Use another value to see the result */
-    width: 80%;
+    width: 251px;
     height: 345px;
     margin:auto;
     text-align: center;
