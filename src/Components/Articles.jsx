@@ -1,19 +1,18 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import ArticleCard from './ArticleCard';
 import './styling/articleHomePage.css'
+import { getArticles } from '../api';
 
 function Articles ({currArticles, setCurrArticles}) {
     const [isLoading, setIsLoading] = useState(true)
-    function getArticles () {
-        setIsLoading(true);
-        return axios.get('https://nc-news-94l5.onrender.com/api/articles').then(({data})=> {
-            setCurrArticles(data.articles.slice(0,10))
-            setIsLoading(false)
-        })
-    }
+   
     useEffect(()=> {
+        setIsLoading(true);
         getArticles()
+            .then((articles)=>{
+                setCurrArticles(articles.slice(0,10))
+                setIsLoading(false)
+            })
     }, []);
 
     if (isLoading) return <p>Loading...</p>
@@ -27,4 +26,4 @@ function Articles ({currArticles, setCurrArticles}) {
     )
 }
 
-export default Articles
+export default Articles;
