@@ -4,14 +4,36 @@ import { getArticleByArticleID } from "../api";
 
 function ArticlePage () {
     const {article_id} = useParams();
-    const [article, setArticle]= useState({})
+    const [article, setArticle]= useState({});
+
+    const [isLoading, setIsLoading] = useState(true);
     useEffect(()=> {
+        setIsLoading(true);
         getArticleByArticleID(article_id)
-            .then((data)=> {
-                console.log(data)
+            .then((article)=> {
+                console.log(article)
+                setArticle(article);
+                setIsLoading(false);
             })
-    }, [])
-    return <p>Hello I am an article Page</p>
+    }, []);
+
+    if (isLoading) return <p>Loading...</p>
+
+    return (
+        <div >
+            <h2>{article.title}</h2>
+            <img src= {article.article_img_url}/>
+            <h3>By {article.author}</h3>
+            <p>{article.topic} </p>
+            <p>Created at {article.created_at.slice(0,10)}</p>
+            {/* link to article page with topic */}
+            <p>{article.body}</p>
+            <div>
+            <p>Votes {article.votes}</p>
+            <button>Give a vote</button>
+            </div>
+        </div>
+    )
 
 }
 
