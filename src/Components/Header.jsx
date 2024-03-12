@@ -6,12 +6,15 @@ import { Link } from 'react-router-dom';
 function Header () {
     const {currentUser} = useContext(UserContext)
 
-    return (
+    return (<>
+        <h1>NC NEWS</h1>
+        
         <nav id='nav-bar'>
             <Link to=  "/">
                 Home
             </Link>
         </nav>
+        </>
     )
 }
 
