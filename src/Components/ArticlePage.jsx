@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleByArticleID } from "../api";
+import AllComments from "./AllComments";
 
 function ArticlePage () {
     const {article_id} = useParams();
@@ -11,7 +12,6 @@ function ArticlePage () {
         setIsLoading(true);
         getArticleByArticleID(article_id)
             .then((article)=> {
-                console.log(article)
                 setArticle(article);
                 setIsLoading(false);
             })
@@ -20,6 +20,7 @@ function ArticlePage () {
     if (isLoading) return <p>Loading...</p>
 
     return (
+        <>
         <div >
             <h2>{article.title}</h2>
             <img src= {article.article_img_url}/>
@@ -33,6 +34,8 @@ function ArticlePage () {
             <button>Give a vote</button>
             </div>
         </div>
+        <AllComments/>
+        </>
     )
 
 }
