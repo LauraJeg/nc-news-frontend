@@ -4,7 +4,7 @@
 }
 
 .articleCard{
-    align-items: center; /* Use another value to see the result */
+    align-items: center;
     width: 251px;
     height: 345px;
     margin:auto;
@@ -18,3 +18,9 @@ img{
     border-radius: 4px;
     margin: 0% 17% ;
 }
+
+a {
+    color: inherit; 
+    text-decoration: inherit; 
+  }
+  
