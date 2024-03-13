@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleByArticleID } from "../api";
 import AllComments from "./AllComments";
+import Votes from "./Votes";
 
 function ArticlePage () {
     const {article_id} = useParams();
@@ -29,10 +30,7 @@ function ArticlePage () {
             <p>Created at {article.created_at.slice(0,10)}</p>
             {/* link to article page with topic */}
             <p>{article.body}</p>
-            <div>
-            <p>Votes {article.votes}</p>
-            <button>Give a vote</button>
-            </div>
+            <Votes votes = {article.votes} commentOrArticle = 'article'/>
         </div>
         <AllComments/>
         </>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getCommentsByArticleID } from "../api";
+import CommentCard from "./CommentCard";
 
 function AllComments () {
     const {article_id} = useParams();
@@ -22,7 +23,7 @@ function AllComments () {
     return (
         <>
         {comments.map((comment)=>{
-            return <p>{comment.body}</p>
+            return <CommentCard key = {comment.comment_id} comment = {comment}/>
         })}
         </>
     )

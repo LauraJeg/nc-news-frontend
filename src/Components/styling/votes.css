@@ -1,0 +1,7 @@
+.article{
+    display:flex;
+}
+.comment{
+    margin-top: 1%;
+    display:  inline-block;
+}
