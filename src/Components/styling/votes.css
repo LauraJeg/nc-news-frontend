@@ -1,0 +1,13 @@
+.article{
+    display:flex;
+}
+.comment{
+    margin-top: 1%;
+    display:  inline-block;
+}
+.liked{
+    background-color: green;
+}
+.unliked{
+    background-color: red;
+}
