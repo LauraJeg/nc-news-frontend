@@ -7,6 +7,7 @@ import Votes from "./Votes";
 function ArticlePage () {
     const {article_id} = useParams();
     const [article, setArticle]= useState({});
+    const [showComments, setShowComments]= useState(false)
 
     const [isLoading, setIsLoading] = useState(true);
     useEffect(()=> {
@@ -32,7 +33,8 @@ function ArticlePage () {
             <p>{article.body}</p>
             <Votes patchID = {article.article_id} votes = {article.votes} commentOrArticle = 'article'/>
         </div>
-        <AllComments/>
+        <button onClick = {() => {setShowComments(!showComments)}} >{showComments? 'Hide comments': 'Show Comments'}</button>
+        {showComments? <AllComments /> : null}
         </>
     )
 

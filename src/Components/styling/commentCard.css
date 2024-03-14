@@ -2,3 +2,11 @@
     border-top: 1px ridge black;
     margin: 1em;
 }
+
+textarea{
+    margin: 1em;
+    font-size: 1.2em;
+    width: 80%;
+    min-height: 4em;
+    border: 1px solid #ccc;
+}
