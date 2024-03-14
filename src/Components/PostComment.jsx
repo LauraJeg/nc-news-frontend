@@ -27,21 +27,3 @@ function PostComment ({article_id, setComments, setIsPostComment}) {
     )
 };
 export default PostComment;
-
-// "POST /api/articles/:article_id/comments": {
-//     "description": "serves new comment to the client",
-//     "queries": ["article_id"],
-//     "reqBodyFormat": {"username": "user",
-//                       "body": "new comment"
-//                      },
-//     "exampleResponse": { 
-//       "comment": {
-//             "comment_id": 19,
-//             "author": "user",
-//             "votes": 0,
-//             "article_id": 2,
-//             "body": "new comment",
-//             "created_at": 1586179020000   
-//       }
-//     }
-//   }
