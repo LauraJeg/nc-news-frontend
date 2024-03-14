@@ -34,7 +34,7 @@ function ArticlePage () {
             <Votes patchID = {article.article_id} votes = {article.votes} commentOrArticle = 'article'/>
         </div>
         <button onClick = {() => {setShowComments(!showComments)}} >{showComments? 'Hide comments': 'Show Comments'}</button>
-        {showComments? <AllComments/> : null}
+        {showComments? <AllComments /> : null}
         </>
     )
 

@@ -24,6 +24,16 @@ export const getCommentsByArticleID = (article_id) => {
 export const patchArticleVotes = (article_id, newVotes) => {
     return axios.patch(`https://nc-news-94l5.onrender.com/api/articles/${article_id}`, newVotes)
 };
+
 export const patchCommentVotes = (comment_id, newVotes)=> {
     return axios.patch(`https://nc-news-94l5.onrender.com/api/comments/${comment_id}`, newVotes)
-}
+};
+
+
+export const postNewComment = (article_id, username, body) => {
+    const comment = {username:username,
+    body:body}
+    return axios.post(`https://nc-news-94l5.onrender.com/api/articles/${article_id}/comments`, comment)
+    .then(({data})=> data.comment)
+    .catch((err)=> console.log(err))
+};
