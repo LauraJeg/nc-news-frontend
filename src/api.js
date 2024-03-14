@@ -20,3 +20,10 @@ export const getCommentsByArticleID = (article_id) => {
         return comments;
     })
 }
+
+export const patchArticleVotes = (article_id, newVotes) => {
+    return axios.patch(`https://nc-news-94l5.onrender.com/api/articles/${article_id}`, newVotes)
+};
+export const patchCommentVotes = (comment_id, newVotes)=> {
+    return axios.patch(`https://nc-news-94l5.onrender.com/api/comments/${comment_id}`, newVotes)
+}

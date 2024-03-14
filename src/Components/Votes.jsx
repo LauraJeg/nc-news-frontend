@@ -1,38 +1,43 @@
 import { useEffect, useState } from "react";
 import './styling/votes.css'
+import { patchArticleVotes, patchCommentVotes } from "../api";
 
-function Votes ({votes, commentOrArticle}) {
+function Votes ({votes, commentOrArticle, patchID}) {
 
     const [liked, setLiked] = useState(false);
     const [newVotes, setNewVotes] = useState(votes)
     const [unliked, setUnLiked]= useState(false)
 
+    function votedFunc (num) {
+        setNewVotes(newVotes + num);
+        if(commentOrArticle === 'article') {
+            patchArticleVotes(patchID, {inc_votes: num})
+                .catch((err)=> setNewVotes(newVotes - num))
+        } else if(commentOrArticle === 'comment'){
+            patchCommentVotes(patchID, {inc_votes: num})
+                .catch((err)=> setNewVotes(newVotes - num))
+        }
+    }
+
     function likeClick () {
-        setLiked(!liked)    
+        setLiked(!liked) 
+        if (unliked){
+            votedFunc(2)
+            setUnLiked(false)
+        } else{
+            liked ? votedFunc(-1) : votedFunc(1)
+        }   
     }
 
     function unLikeClick() {
         setUnLiked(!unliked)
-    }
-    useEffect(()=> {
-        if (unliked){
-            liked ? setNewVotes(votes + 2) : setNewVotes(votes)
-            setUnLiked(false)
+        if(liked){
+            votedFunc(-2)
+            setLiked(false)
         } else{
-            liked ? setNewVotes(votes + 1) : setNewVotes(votes)
+            unliked? votedFunc(1) : votedFunc(-1)
         }
-        
-        }, [liked])
-
-   useEffect(() => {
-    if(liked){
-        unliked? setNewVotes(votes -2) : setNewVotes(votes) 
-        setLiked(false)
-    } else{
-        unliked? setNewVotes(votes - 1) : setNewVotes(votes) 
     }
-    
-   }, [unliked])
 
 
 return (<div className={commentOrArticle}>

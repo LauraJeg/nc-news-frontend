@@ -30,7 +30,7 @@ function ArticlePage () {
             <p>Created at {article.created_at.slice(0,10)}</p>
             {/* link to article page with topic */}
             <p>{article.body}</p>
-            <Votes votes = {article.votes} commentOrArticle = 'article'/>
+            <Votes patchID = {article.article_id} votes = {article.votes} commentOrArticle = 'article'/>
         </div>
         <AllComments/>
         </>

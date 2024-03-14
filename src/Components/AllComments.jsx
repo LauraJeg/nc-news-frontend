@@ -12,7 +12,6 @@ function AllComments () {
         setIsLoading(true)
         getCommentsByArticleID(article_id)
         .then((comments)=> {
-            console.log(comments);
             setComments(comments);
             setIsLoading(false)
         })
