@@ -26,6 +26,7 @@ function AllComments () {
         <button disabled = {isPostComment} onClick = {()=> {setIsPostComment(true)}}>Post New Comment</button>
         {isPostComment? <PostComment setIsPostComment ={setIsPostComment} setComments={setComments} article_id = {article_id}/>:null}
         {comments.map((comment)=>{
+            console.log(comment)
             return <CommentCard key = {comment.comment_id} comment = {comment}/>
         })}
         </>
