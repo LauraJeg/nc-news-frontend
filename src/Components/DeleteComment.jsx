@@ -1,18 +1,11 @@
 import { deleteComment } from "../api";
 
-function DeleteComment ({comment, setComments}) {
+function DeleteComment ({comment_id, setisCommentDeleted}) {
     
     function handleDelete () {
-       deleteComment(comment.comment_id)
+       deleteComment(comment_id)
         .then(()=>{
-            setComments((comments)=> {
-                console.log(comment.comment_id, comments)
-                return comments.map((commentMap)=> {
-                    if (comment.comment_id !== commentMap.comment_id){
-                        return commentMap;
-                    };
-                });
-            });
+            setisCommentDeleted(true)
         });
     };
     return <button onClick = {handleDelete}>Delete</button>
