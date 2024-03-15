@@ -37,3 +37,7 @@ export const postNewComment = (article_id, username, body) => {
     .then(({data})=> data.comment)
     .catch((err)=> console.log(err))
 };
+
+export const deleteComment = (comment_id) => {
+    return axios.delete(`https://nc-news-94l5.onrender.com/api/comments/${comment_id}`)
+};
