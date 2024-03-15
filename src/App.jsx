@@ -4,6 +4,7 @@ import Articles from './Components/Articles'
 import Header from './Components/Header'
 import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
+import Topics from './Components/Topics';
 
 
 
@@ -15,7 +16,8 @@ function App() {
       
       <Route path="/" element={ <Articles currArticles = {currArticles} setCurrArticles = {setCurrArticles}/>} />
       <Route path="/article/:article_id" element={<ArticlePage />} />
-     
+      <Route path='topics' element={<Topics/>}/>
+
     </Routes>
     </>
   )
