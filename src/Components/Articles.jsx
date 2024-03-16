@@ -7,7 +7,7 @@ import SortByAndOrderBy from './SortByAndOrderBy';
 function Articles ({currArticles, setCurrArticles}) {
     const [isLoading, setIsLoading] = useState(true);
     const [sortBy, setSortBy] = useState("created_at");
-    console.log(sortBy)
+    const [orderBy, setOrderBy] = useState("desc");
 
     useEffect(()=> {
         setIsLoading(true);
@@ -21,7 +21,7 @@ function Articles ({currArticles, setCurrArticles}) {
     if (isLoading) return <p>Loading...</p>
 
     return ( <>
-        <SortByAndOrderBy setSortBy={setSortBy} sortBy={sortBy}/>
+        <SortByAndOrderBy orderBy={orderBy} setOrderBy={setOrderBy} setSortBy={setSortBy} sortBy={sortBy}/>
 
         <div className = 'articles'>
         {currArticles.map((article)=>{
