@@ -6,6 +6,7 @@ import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import Topics from './Components/Topics';
 import SingleTopicPage from './Components/SingleTopicPage';
+import NoPathError from './Components/NoPathError';
 
 
 
@@ -19,6 +20,7 @@ function App() {
       <Route path="/article/:article_id" element={<ArticlePage />} />
       <Route path='topics' element={<Topics/>}/>
       <Route path = 'topics/:slug' element={< SingleTopicPage currArticles = {currArticles} setCurrArticles = {setCurrArticles}/>}/>
+      <Route path='*' element={<NoPathError/>}/>
 
     </Routes>
     </>
