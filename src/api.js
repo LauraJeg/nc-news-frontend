@@ -3,7 +3,6 @@ import axios from 'axios';
 export const getArticles = () => {
     return axios.get('https://nc-news-94l5.onrender.com/api/articles').then(({data: {articles}})=> {
         return articles;
-       
     })
 };
 
@@ -40,4 +39,14 @@ export const postNewComment = (article_id, username, body) => {
 
 export const deleteComment = (comment_id) => {
     return axios.delete(`https://nc-news-94l5.onrender.com/api/comments/${comment_id}`)
+};
+
+export const getTopics = () => {
+    return axios.get(`https://nc-news-94l5.onrender.com/api/topics`)
+    .then(({data})=> data.topics)
+}
+export const getArtcilesByTopic = (slug) => {
+    return axios.get(`https://nc-news-94l5.onrender.com/api/articles?topic=${slug}`).then(({data})=> {
+        return data.articles
+    })
 };
