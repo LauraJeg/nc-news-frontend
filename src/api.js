@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const getArticles = (sortBy) => {
-    return axios.get(`https://nc-news-94l5.onrender.com/api/articles?sort_by=${sortBy}`).then(({data: {articles}})=> {
+export const getArticles = (sortBy,orderBy) => {
+    return axios.get(`https://nc-news-94l5.onrender.com/api/articles?sort_by=${sortBy}&order=${orderBy}`).then(({data: {articles}})=> {
         return articles;
     })
 };

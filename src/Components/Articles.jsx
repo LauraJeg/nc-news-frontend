@@ -11,12 +11,12 @@ function Articles ({currArticles, setCurrArticles}) {
 
     useEffect(()=> {
         setIsLoading(true);
-        getArticles(sortBy)
+        getArticles(sortBy, orderBy)
             .then((articles)=>{
                 setCurrArticles(articles.slice(0,10))
                 setIsLoading(false)
             })
-    }, [sortBy]);
+    }, [sortBy, orderBy]);
 
     if (isLoading) return <p>Loading...</p>
 
