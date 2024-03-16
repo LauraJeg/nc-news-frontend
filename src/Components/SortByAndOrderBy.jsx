@@ -9,9 +9,9 @@ function SortByAndOrderBy (setSortBy, sortBy) {
             setSortBy(e.target.value);
           }}
         >
-          <option value="created_at">created date</option>
-          <option value="comment_count">comments</option>
-          <option value="votes">votes</option>
+          <option value="created_at">Created date</option>
+          <option value="comment_count">Comments</option>
+          <option value="votes">Votes</option>
         </select>
     </div>
 

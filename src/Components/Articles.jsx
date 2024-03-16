@@ -7,14 +7,16 @@ import SortByAndOrderBy from './SortByAndOrderBy';
 function Articles ({currArticles, setCurrArticles}) {
     const [isLoading, setIsLoading] = useState(true);
     const [sortBy, setSortBy] = useState("created_at");
+    console.log(sortBy)
+
     useEffect(()=> {
         setIsLoading(true);
-        getArticles()
+        getArticles(sortBy)
             .then((articles)=>{
                 setCurrArticles(articles.slice(0,10))
                 setIsLoading(false)
             })
-    }, []);
+    }, [sortBy]);
 
     if (isLoading) return <p>Loading...</p>
 
