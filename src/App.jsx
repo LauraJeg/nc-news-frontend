@@ -5,6 +5,7 @@ import Header from './Components/Header'
 import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import Topics from './Components/Topics';
+import SingleTopicPage from './Components/SingleTopicPage';
 
 
 
@@ -17,10 +18,11 @@ function App() {
       <Route path="/" element={ <Articles currArticles = {currArticles} setCurrArticles = {setCurrArticles}/>} />
       <Route path="/article/:article_id" element={<ArticlePage />} />
       <Route path='topics' element={<Topics/>}/>
+      <Route path = 'topics/:slug' element={< SingleTopicPage currArticles = {currArticles} setCurrArticles = {setCurrArticles}/>}/>
 
     </Routes>
     </>
   )
 }
 
-export default App
+export default App;

@@ -7,7 +7,8 @@ import Votes from "./Votes";
 function ArticlePage () {
     const {article_id} = useParams();
     const [article, setArticle]= useState({});
-    const [showComments, setShowComments]= useState(false)
+    const [showComments, setShowComments]= useState(false);
+
 
     const [isLoading, setIsLoading] = useState(true);
     useEffect(()=> {
