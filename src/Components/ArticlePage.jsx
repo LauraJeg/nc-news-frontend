@@ -20,13 +20,13 @@ function ArticlePage () {
                 setArticle(article);
                 setIsLoading(false);
             })
-            .catch(({response})=> {console.log(response.status, response.data.msg)
+            .catch(({response})=> {
                 setIsLoading(false);
             return setNewError([response.status, response.data.msg])})
     }, []);
 
     if (isLoading) return <p>Loading...</p>
-    else if(newError.status === undefined) return <Error statuscode={newError[0]} msg={newError[1]}/>
+    else if(newError[0] !== undefined) return <Error statuscode={newError[0]} msg={newError[1]}/>
 
     return (
         <>

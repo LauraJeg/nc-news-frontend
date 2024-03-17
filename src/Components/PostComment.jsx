@@ -4,7 +4,8 @@ import { postNewComment } from "../api";
 
 function PostComment ({article_id, setComments, setIsPostComment}) {
     const { currentUser} = useContext(UserContext);
-    const [newComment, setNewComment] = useState('')
+    const [newComment, setNewComment] = useState('');
+    const [newError, setNewError]= useState([]);
     
     function handleSubmit (e) {
         e.preventDefault();
@@ -16,8 +17,12 @@ function PostComment ({article_id, setComments, setIsPostComment}) {
                 return [comment, ...comments];
               });
         })
+        .catch(({response})=> {
+        return setNewError([response.status, response.data.msg])})
     };
 
+    if(newError[0] !== undefined) return <Error statuscode={newError[0]} msg={newError[1]}/>
+    
     return (
         <form id='post-comment'  onSubmit={handleSubmit}>
             <label htmlFor='comment-body'></label>

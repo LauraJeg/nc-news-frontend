@@ -12,8 +12,7 @@ import Error from './Components/Error';
 
 function App() {
   const [currArticles, setCurrArticles] = useState([])
-  const error = {statuscode :404, msg: 'Path not found'}
-  console.log(error.statuscode)
+  
   return (<>
     <Header/>
     <Routes>
