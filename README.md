@@ -51,7 +51,7 @@ This project demonstrates the ability to connect a backend API to a frontend app
 ### Links
 
 - **Backend API:** [https://nc-news-94l5.onrender.com ](https://nc-news-94l5.onrender.com )
-- **View the Project:** [https://lauras-nc-news.netlify.app/](https://lauras-nc-news.netlify.app/)
+- **View the Project:** [https://lauras-nc-news.netlify.app/](https://laugtras-nc-news.netlify.app/)
 
 
 https://tangerine-gingersnap-6bb94c.netlify.app
