@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { UserContext } from '../Contexts/UserContext';
 import { Link } from 'react-router-dom';
+import Login from './Login';
 
 
 function Header () {
@@ -8,7 +9,7 @@ function Header () {
 
     return (<>
         <h1>NC NEWS</h1>
-        
+        <Login/>
         <nav id='nav-bar'>
             <Link to=  "/">
                 Home
