@@ -8,7 +8,7 @@ function Header () {
     const {currentUser} = useContext(UserContext)
 
     return (<>
-        <h1>NC NEWS</h1>
+        <h1>LAURA'S NC NEWS</h1>
         <Login/>
         
         <nav id='nav-bar'>
