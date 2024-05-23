@@ -46,7 +46,13 @@ export const getTopics = () => {
     .then(({data})=> data.topics)
 }
 export const getArtcilesByTopic = (slug) => {
-    return axios.get(`https://nc-news-94l5.onrender.com/api/articles?topic=${slug}`).then(({data})=> {
+    return axios.get(`https://nc-news-94l5.onrender.com/api/articles?topic=${slug}`)
+    .then(({data})=> {
         return data.articles
     })
 };
+
+export const getUsers = () => {
+    return axios.get('https://nc-news-94l5.onrender.com/api/users')
+    .then(({data})=> {return data.users})
+}
