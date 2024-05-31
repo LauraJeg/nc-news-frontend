@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
-import { UserContext } from "./context/UserContext";
-import { getUsers } from "../api";
+import { UserContext } from '../Contexts/UserContext';
+import { Box, Button, CircularProgress, Input } from "@mui/material";
+import axios from "axios";
 
 const Login = () => {
   const { setCurrentUser } = useContext(UserContext);
@@ -12,10 +13,11 @@ const Login = () => {
 
   const checkValidUser = (user) => {
     setLoading(true);
-    getUsers
-      .then(({ data }) => {
-        const usersList = data.map((eachUser) => eachUser.username);
-        const isValidUser = usersList.includes(user);
+    setLoading(true);
+    axios
+      .get(`https://nc-news-94l5.onrender.com/api/users`)
+      .then(({ data: {users} }) => {
+        const isValidUser = users.map((eachUser) => eachUser.username).includes(user);
         setValid(isValidUser);
         setUserMessage(isValidUser ? "" : "User not found, please register!");
         setLoading(false);
@@ -52,6 +54,11 @@ const Login = () => {
           onChange={(e) => setInputValue(e.target.value)}
         />
         <Button onClick={handleLogin}>Login</Button>
+        {loading && (
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <CircularProgress />
+          </Box>
+        )}
       </div>
     </>
   );
