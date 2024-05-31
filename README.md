@@ -36,10 +36,9 @@ This project demonstrates the ability to connect a backend API to a frontend app
 ### How to Run the Project
 
 1. Clone the repository: `git clone https://github.com/LauraJeg/nc-news-frontend`
-2. Navigate to the project directory: `cd nc-news`
-3. Install dependencies: `npm install`
-4. Start the frontend and backend servers: `npm start`
-5. Access the application in your browser at `http://localhost:3000`
+2. Install dependencies: `npm install`
+3. Start the frontend and backend servers: `npm start`
+4. Access the application in your browser at `http://localhost:3000`
 
 ### Project Structure
 
